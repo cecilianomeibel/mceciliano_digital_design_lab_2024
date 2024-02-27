@@ -1,9 +1,0 @@
-library IEEE; use IEEE.STD_LOGIC_1164.all;
-
-entity fulladder_4 is
-	port(a: in STD_LOGIC_VECTOR(3 downto 0); --Entrada "a" de 4 bits
-		  b: in STD_LOGIC_VECTOR(3 downto 0); --Entrada "b" de 4 bits
-		  Cin: in STD_LOGIC;						  --Bit de acarreo de entrada
-		  
-													  );
-end;
