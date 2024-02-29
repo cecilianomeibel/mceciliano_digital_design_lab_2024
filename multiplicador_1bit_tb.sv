@@ -1,0 +1,43 @@
+module multiplicador_1bit_tb;
+
+    // Definición de señales
+    bit a, b, resultado;
+
+    // Instancia del multiplicador de 1 bit
+    multiplicador_1bit uut (
+        .a(a),
+        .b(b),
+        .resultado(resultado)
+    );
+
+    // Inicialización de señales
+    initial begin
+        // Test case 1: 0 x 0
+        a = 0;
+        b = 0;
+        #10ns; // Esperar un ciclo
+        if (resultado !== 0) $display("Test case 1 failed: Resultado incorrecto");
+
+        // Test case 2: 0 x 1
+        a = 0;
+        b = 1;
+        #10ns; // Esperar un ciclo
+        if (resultado !== 0) $display("Test case 2 failed: Resultado incorrecto");
+
+        // Test case 3: 1 x 0
+        a = 1;
+        b = 0;
+        #10ns; // Esperar un ciclo
+        if (resultado !== 0) $display("Test case 3 failed: Resultado incorrecto");
+
+        // Test case 4: 1 x 1
+        a = 1;
+        b = 1;
+        #10ns; // Esperar un ciclo
+        if (resultado !== 1) $display("Test case 4 failed: Resultado incorrecto");
+
+        // Finalizar la simulación
+        $finish;
+    end
+
+endmodule
