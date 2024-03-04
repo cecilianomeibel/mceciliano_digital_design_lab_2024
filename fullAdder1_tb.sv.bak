@@ -1,0 +1,61 @@
+module fullAdder1_tb;
+
+    // Declaración del componente
+    fullAdder1 uut (
+        .a(a),
+        .b(b),
+        .Cin(Cin),
+        .sum1(sum1),
+        .Cout(Cout)
+    );
+
+    // Declaración de las señales
+    logic a = 1'b0;
+    logic b = 1'b0;
+    logic Cin = 1'b0;
+    logic sum1;
+    logic Cout;
+
+    // Proceso de entrada
+    initial begin
+        // Espera de 10 ns
+        #10;
+
+        // Casos de entrada
+        Cin = 1'b0;
+        a = 1'b1;
+        b = 1'b0;
+        #10;
+
+        Cin = 1'b0;
+        a = 1'b0;
+        b = 1'b1;
+        #10;
+
+        Cin = 1'b0;
+        a = 1'b1;
+        b = 1'b1;
+        #10;
+
+        Cin = 1'b1;
+        a = 1'b0;
+        b = 1'b0;
+        #10;
+
+        Cin = 1'b1;
+        a = 1'b1;
+        b = 1'b0;
+        #10;
+
+        Cin = 1'b1;
+        a = 1'b0;
+        b = 1'b1;
+        #10;
+
+        Cin = 1'b1;
+        a = 1'b1;
+        b = 1'b1;
+        #10;
+    end
+
+endmodule

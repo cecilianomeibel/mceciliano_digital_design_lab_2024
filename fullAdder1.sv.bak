@@ -1,0 +1,21 @@
+
+module fulladder_1 (
+    input logic a,                  // Entrada del primer número de 4 bits
+    input logic b,                  // Entrada del segundo número de 4 bits
+    input logic Cin,                // Acarreo de entrada
+    output logic sum1,              // Resultado de la suma
+    output logic Cout               // Acarreo de salida
+);
+
+    // Variables internas
+    logic p, g;
+
+    // p y g permiten reducir el procedimiento matemático de las salidas
+    assign p = a ^ b;               // p es la suma (a+b)
+    assign g = a & b;               // g es la multiplicación (a*b)
+
+    // Salidas
+    assign sum1 = p ^ Cin;          // suma de (p+Cin)
+    assign Cout = g | (p & Cin);    // Solución g+(p*Cin)
+
+endmodule

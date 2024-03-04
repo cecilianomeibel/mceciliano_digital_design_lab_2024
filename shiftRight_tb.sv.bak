@@ -1,0 +1,27 @@
+module shiftRight_tb;
+
+    // Parámetro del diseño
+    parameter N = 5;
+
+    // Señales de la DUT (Design Under Test)
+    logic signed [N-1:0] a;
+    logic [N-1:0] aDesplace;
+    logic signed [N-1:0] result;
+
+    // Instancia del DUT
+    shiftRight #(N) dut (
+        .a(a),
+        .aDesplace(aDesplace),
+        .result(result)
+    );
+
+    // Generación de estímulos
+    initial begin
+        // Prueba con a = 5 (01011), aDesplace = 1 (00010)
+        a = 5'b01011;
+        aDesplace = 5'b00001;
+
+       
+    end
+
+endmodule
